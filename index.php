@@ -1,6 +1,6 @@
 <?php
 	include('login.php');
-	if (isset($_SESSION['userLogin'] && $_SESSION['passWord'])) {
+	if (isset($_SESSION['userLogin']) && (isset($_SESSION['passWord']))) {
 		header("location: user.php");
 	}
 ?>
