@@ -10,7 +10,8 @@
 	<title>Welcome to TaskNoter</title>
 	<link rel="stylesheet" type="text/css" href="styling.css">
 </head>
-<body>
+<body class="keha">
+	<div class="login">
 	<form method="POST" action="">
 		<label>Username: </label>
 		<input type="text" name="userName">
@@ -20,5 +21,8 @@
 		<input type="submit" name="loginButton" value="Log in">
 		<span><?php echo $error; ?></span>
 	</form>
+	<div>Not a user yet?</div>
+	<button>Create user</button>
+	</div>
 </body>
 </html>
