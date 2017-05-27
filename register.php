@@ -21,6 +21,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   		else {
   			if ($_POST["passWord"] == $_POST["passWord2"]) {
   				$pass = clean_input($_POST["passWord"]);
+  				$connection = mysqli_connect("localhost", "root", "t3st3r123", "test");
+  				$query = mysqli_query($connection, "SELECT * FROM mesna_projekt WHERE kasutaja='$user'");
+  				$rows = mysqli_num_rows($query);
+  				if ($rows == 0) {
+  					$sql = "INSERT INTO mesna_projekt (kasutaja, parool) VALUES ('$user', '$pass')";
+  					if ($connection->query($sql) === TRUE) {
+  						header("location: index.php");
+  						mysqli_close($connection);
+  					}
+  					else {
+  						echo "Error: " . $sql . "<br>" . $connection->error;
+  					}
+  				}
+  				else {
+  					mysqli_close($connection);
+  				}
   			}
   			else {
   				$passWordMatchError = "Passwords don't match!";
@@ -28,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   		}
  	}
 }
+
 function clean_input($data) {
 	$data = trim($data);
 	$data = stripslashes($data);
@@ -42,9 +59,9 @@ function clean_input($data) {
 	<link rel="stylesheet" type="text/css" href="styling.css">
 </head>
 <body class="keha">
-	<div class="register">
+	<div class="container">
 	<div><b>Create a new user for TaskNoter</b></div><br>
-	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="form">
 		<label>Username: </label>
 		<input type="text" name="userName" class="input" value="<?php if(isset($_POST['userName'])){ echo $_POST['userName'];} ?>"><br>
 		<span class="error"><?php echo $userNameError; ?></span>
@@ -54,9 +71,8 @@ function clean_input($data) {
 		<label>Password again: </label>
 		<input type="password" name="passWord2" class="input">
 		<span class="error"><?php echo $passWordMatchError; ?></span>
-		<input type="submit" name="createUser" value="Create">
-		<a href="index.php" class="button">Cancel</a>
-		<button onclick="window.location='index.php'">Cancel</button>
+		<button type="submit" name="createUser">Create user</button>
+		<button><a href="index.php">Cancel</a></button>
 	</form>
 	</div>
 </body>

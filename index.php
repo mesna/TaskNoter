@@ -11,14 +11,14 @@
 	<link rel="stylesheet" type="text/css" href="styling.css">
 </head>
 <body class="keha">
-	<div class="login">
-	<form method="POST" action="">
+	<div class="container">
+	<form method="POST" action="" class="form">
 		<label>Username: </label>
 		<input type="text" name="userName" class="input">
 		<label>Password: </label>
 		<input type="Password" name="passWord" class="input">
 		<br>
-		<input type="submit" name="loginButton" value="Log in">
+		<button type="submit" name="loginButton">Log In</button>
 		<span class="error"><?php echo $error; ?></span>
 	</form>
 	<div>Not a user yet?</div>

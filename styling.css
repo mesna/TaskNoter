@@ -1,39 +1,59 @@
-.login {
+.container {
 	margin: 0 auto;
 	margin-top: 300px;
 	border-radius: 5px;
 	border: solid 2px green;
     background-color: #f2f2f2;
     padding: 20px;
-    max-width: 200px;
+    max-width: 250px;
     
 }
 .keha {
 	background-color: lightblue;
 }
-.register {
+.tasks {
 	margin: 0 auto;
-	margin-top: 300px;
+	margin-top: 100px;
 	border-radius: 5px;
 	border: solid 2px green;
-    background-color: #f2f2f2;
+    background-color: lightblue;
     padding: 20px;
-    max-width: 200px;
+    max-width: 250px;
 }
-a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-    color: initial;
+.content {
+	margin: 0 auto;
+	margin-top: 200px;
+	border-radius: 5px;
+	border: solid 2px green;
+    background-color: #42bff4;
+    padding: 20px;
+    max-width: 350px;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+button {
+    background-color: white;
+    color: black;
+    border: 2px solid green;
+    border-radius: 5px;
 }
 .input {
 	margin-bottom: 5px;
 	margin-top: 5px;
 	border: 2px solid green;
 	border-radius: 5px;
+	font-size: 20px;
 }
 .error {
 	color: red;
+}
+.form {
+	color: green;
+	font-size: 20px;
+	font-family: Courier;
+	font-weight: bold;
 }
