@@ -9,6 +9,6 @@
 </head>
 <body>
 	<div>Hello <?php echo $login_session ?></div>
-	<div><a href="logout.php">Exit</a></div>
+	<div><a href="logout.php" class="button">Exit</a></div>
 </body>
 </html>

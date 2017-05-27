@@ -8,14 +8,14 @@
 		else {
 			$user = $_POST['userName'];
 			$pass = $_POST['passWord'];
-			$connection = mysqli_connect("localhost", "test", "t3st3r123", "test");
+			$connection = mysqli_connect("localhost", "root", "t3st3r123", "test");
 			// Välistan html-i jms kasutamise päringus
 			$user = htmlspecialchars($user);
 			$pass = htmlspecialchars($pass);
 			$user = mysqli_real_escape_string($connection, $user);
 			$pass = mysqli_real_escape_string($connection, $pass);
 			//Kontrollin, kas kasutaja vastava parooliga andmebaasis eksisteerib
-			$query = mysqli_query($connection, "SELECT * FROM mesna_projekt WHERE Username='$user' AND Password='$pass'");
+			$query = mysqli_query($connection, "SELECT * FROM mesna_projekt WHERE kasutaja='$user' AND parool='$pass'");
 			$rows = mysqli_num_rows($query);
 			if ($rows == 1) {
 				$_SESSION['userLogin'] = $user;

@@ -14,15 +14,15 @@
 	<div class="login">
 	<form method="POST" action="">
 		<label>Username: </label>
-		<input type="text" name="userName">
+		<input type="text" name="userName" class="input">
 		<label>Password: </label>
-		<input type="Password" name="passWord">
+		<input type="Password" name="passWord" class="input">
 		<br>
 		<input type="submit" name="loginButton" value="Log in">
-		<span><?php echo $error; ?></span>
+		<span class="error"><?php echo $error; ?></span>
 	</form>
 	<div>Not a user yet?</div>
-	<button>Create user</button>
+	<button onclick="window.location.href='register.php'">Create user</button>
 	</div>
 </body>
 </html>
