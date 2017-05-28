@@ -21,9 +21,9 @@
 	?>
 	</div>
 	<div>
-		<button class="button" onclick="window.location.href='new_task.php'">New Task</button>	
-		<button class="button" name="deleteTask" type="submit" form="form">Delete</button>
-		<button style="float:right;"class="button" onclick="window.location.href='index.php'">Exit</button>
+		<button onclick="window.location.href='new_task.php'">New Task</button>	
+		<button name="deleteTask" type="submit" form="form">Delete</button>
+		<button style="float:right;" onclick="window.location.href='index.php'">Exit</button>
 	</div>
 	</div>
 	<form method="POST" action="delete_task.php" id="form"></form>

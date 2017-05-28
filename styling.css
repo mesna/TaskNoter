@@ -6,6 +6,9 @@
     background-color: #f2f2f2;
     padding: 20px;
     max-width: 250px;
+    -moz-box-shadow:    3px 3px 5px 6px lightslategray;
+    -webkit-box-shadow: 3px 3px 5px 6px lightslategray;
+    box-shadow:         3px 3px 5px 6px lightslategray;
 }
 .keha {
 	background-color: lightblue;
@@ -27,7 +30,7 @@
 	margin-top: 20px;
 	border-radius: 5px;
 	border: solid 2px black;
-    background-color: lightblue;
+    background-color: lightyellow;
     padding: 1px;
     max-width: 350px;
 }
@@ -36,19 +39,27 @@
 	margin-top: 200px;
 	border-radius: 5px;
 	border: solid 2px black;
-    background-color: #42bff4;
+    background-color: #f2f2f2;
     padding: 10px;
     max-width: 400px;
+    -moz-box-shadow:    3px 3px 5px 6px lightslategray;
+    -webkit-box-shadow: 3px 3px 5px 6px lightslategray;
+    box-shadow:         3px 3px 5px 6px lightslategray;
 }
 button {
+    transition-duration: 0.3s;
 	margin-top: 5px;
-    background-color: lightblue;
+    background-color: white;
     color: black;
     border: 2px solid black;
     border-radius: 5px;
     font-family: Courier;
     font-size: 18px;
     font-weight: bold;
+}
+button:hover {
+	color: black;
+	background-color: lightblue;
 }
 .input {
 	margin-bottom: 5px;
