@@ -33,7 +33,7 @@
 <DOCTYPE html>
 <html>
 <head>
-	<title>Register</title>
+	<title>User Registration</title>
 	<link rel="stylesheet" type="text/css" href="styling.css">
 </head>
 <body class="keha">
