@@ -4,6 +4,9 @@ $userNameError = $passWordError = $passWordMatchError = "";
 $user = $pass = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST["cancelUser"])) {
+    header("location: index.php");
+  }
 	if (empty($_POST["userName"])) {
     	$userNameError = "Username is required";
   	} 
@@ -72,7 +75,7 @@ function clean_input($data) {
 		<input type="password" name="passWord2" class="input">
 		<span class="error"><?php echo $passWordMatchError; ?></span>
 		<button type="submit" name="createUser">Create user</button>
-		<button><a href="index.php">Cancel</a></button>
+		<button name="cancelUser">Cancel</button>
 	</form>
 	</div>
 </body>

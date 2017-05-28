@@ -21,8 +21,8 @@
 		<button type="submit" name="loginButton">Log In</button>
 		<span class="error"><?php echo $error; ?></span>
 	</form>
-	<div>Not a user yet?</div>
+	<div class ="text"><span>Not a user yet?</span></div>
 	<button onclick="window.location.href='register.php'">Create user</button>
-	</div>
+</div>
 </body>
 </html>
