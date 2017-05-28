@@ -63,7 +63,7 @@ function clean_input($data) {
 </head>
 <body class="keha">
 	<div class="container">
-	<div><b>Create a new user for TaskNoter</b></div><br>
+	<div><b class="text">Create a new user for TaskNoter</b></div><br>
 	<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="form">
 		<label>Username: </label>
 		<input type="text" name="userName" class="input" value="<?php if(isset($_POST['userName'])){ echo $_POST['userName'];} ?>"><br>

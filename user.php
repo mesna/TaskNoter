@@ -14,14 +14,18 @@
 	<div class="tasks">
 	<?php
 		while ($row = mysqli_fetch_array($task_sql)) {
-			echo "<div style='font-size: 20px;	font-family: Courier; font-weight: bold;'>".$row['tasks']."</div><br>";
+			//echo "<div style='font-size: 20px;	font-family: Courier; font-weight: bold;'><input type='checkbox'>".$row['tasks']."</div><br>";
+	?>
+	<div class="task"><input name="checkbox[]" type="checkbox" value="<?php echo $row['ID']?>" form="form"><?php echo $row['tasks']; ?></div>
+	<?php
 		}
 		mysqli_close($connection);
 	?>
 	</div>
 	<div>
 		<button class="button" onclick="window.location.href='index.php'">Exit</button>
-		<button class="button" id="newTask" onclick="window.location.href='new_task.php'">Create a New Task</button>
+		<button class="button" id="newTask" onclick="window.location.href='new_task.php'">New Task</button>
+		<form method="POST" action="delete_task.php" id="form"><button class="button" name="deleteTask" type="submit">Delete</button></form>
 	</div>
 	</div>
 </body>
