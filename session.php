@@ -1,6 +1,6 @@
 <?php
-	$connection = mysqli_connect("localhost", "test", "t3st3r123", "test");
 	session_start();
+	include("dbconnect.php");
 	$checkuser = $_SESSION['userLogin'];
 	$user_sql = mysqli_query($connection, "SELECT kasutaja FROM mesna_projekt WHERE kasutaja='$checkuser'");
 	$row = mysqli_fetch_assoc($user_sql);

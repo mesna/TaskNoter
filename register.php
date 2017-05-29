@@ -1,5 +1,5 @@
 <?php
-
+include("dbconnect.php");
 $userNameError = $passWordError = $passWordMatchError = "";
 $user = $pass = "";
 
@@ -11,7 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     	$userNameError = "Username is required";
   	} 
   	else {
-    	$user = clean_input($_POST["userName"]);
+    	$user = htmlspecialchars($_POST["userName"]);
+      $user = mysqli_real_escape_string($connection, $user);
   	}
 
   	if (empty($_POST["passWord"])) {
@@ -23,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   		}
   		else {
   			if ($_POST["passWord"] == $_POST["passWord2"]) {
-  				$pass = clean_input($_POST["passWord"]);
-  				$connection = mysqli_connect("localhost", "test", "t3st3r123", "test");
+  				$pass = htmlspecialchars($_POST["passWord"]);
+          $pass = mysqli_real_escape_string($connection, $pass);
   				$query = mysqli_query($connection, "SELECT * FROM mesna_projekt WHERE kasutaja='$user'");
   				$rows = mysqli_num_rows($query);
   				if ($rows == 0) {
@@ -39,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   				}
   				else {
   					mysqli_close($connection);
-            $userNameError = "This username is already taken!";
+            $userNameError = "This username is already taken!"
   				}
   			}
   			else {
@@ -47,15 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   			}
   		}
  	}
-}
-
-function clean_input($data) {
-  $connection = mysqli_connect("localhost", "test", "t3st3r123", "test");
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-  $data = mysqli_real_escape_string($connection, $data);
-	return $data;
 }
 ?>
 <DOCTYPE html>
