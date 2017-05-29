@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   				}
   				else {
   					mysqli_close($connection);
-            $userNameError = "This username is already taken!"
+            $userNameError = "This username is already taken!";
   				}
   			}
   			else {
