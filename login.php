@@ -8,7 +8,7 @@
 		else {
 			$user = $_POST['userName'];
 			$pass = $_POST['passWord'];
-			$connection = mysqli_connect("localhost", "root", "t3st3r123", "test");
+			$connection = mysqli_connect("localhost", "test", "t3st3r123", "test");
 			// Välistan html-i jms kasutamise päringus
 			$user = htmlspecialchars($user);
 			$pass = htmlspecialchars($pass);

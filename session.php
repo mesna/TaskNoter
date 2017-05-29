@@ -1,5 +1,5 @@
 <?php
-	$connection = mysqli_connect("localhost", "root", "t3st3r123", "test");
+	$connection = mysqli_connect("localhost", "test", "t3st3r123", "test");
 	session_start();
 	$checkuser = $_SESSION['userLogin'];
 	$user_sql = mysqli_query($connection, "SELECT kasutaja FROM mesna_projekt WHERE kasutaja='$checkuser'");

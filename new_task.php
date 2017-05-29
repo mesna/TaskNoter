@@ -8,7 +8,7 @@
 		}
 		else {
 			$task = clean_input($_POST["taskName"]);
-			$connection = mysqli_connect("localhost", "root", "t3st3r123", "test");
+			$connection = mysqli_connect("localhost", "test", "t3st3r123", "test");
   			$sql = "INSERT INTO mesna_projekt_data (kasutaja, tasks) VALUES ('$user', '$task')";
   			if ($connection->query($sql) === TRUE) {
   				header("location: user.php");
@@ -24,9 +24,11 @@
 		header("location: user.php");
 	}
 	function clean_input($data) {
+	$connection = mysqli_connect("localhost", "test", "t3st3r123", "test");
 	$data = trim($data);
 	$data = stripslashes($data);
 	$data = htmlspecialchars($data);
+	$data = mysqli_real_escape_string($connection, $data);
 	return $data;
 }
 ?>
